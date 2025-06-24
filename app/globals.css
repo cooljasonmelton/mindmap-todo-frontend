@@ -1,9 +1,10 @@
+@import "./variables.css";
 @import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@import "./components.css";
 
 @theme inline {
   --color-background: var(--background);
