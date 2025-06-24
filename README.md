@@ -1,36 +1,25 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+COLORS: 
 
-## Getting Started
+https://coolors.co/0c0f0a-fbff12-dde000-ff206e-e0004f-41ead4-ebebeb-ffffff
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+TODO:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+todo app
+- Layout - dashboard with ai features panel and main todo items
+- TodoContainer
+- TodoCard
+- CRUD fetch, hook, react query
+- implement fetch hook
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+ai features panel
+- random todo (non-ai)
+- summarize todo list themes
+- suggest item 
+  - toggle suggest easiest item
+  - toggle suggest important item
+- break down todo into steps
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+ideal
+- like freeform app on mac, can drag screen and look at different items and click to interact or order them with drag and drop
