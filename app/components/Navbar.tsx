@@ -1,3 +1,4 @@
+// TODO: add skull image to nav
 const Navbar = () => {
   return (
     <nav className="w-full border-b flex justify-between items-center p-2">
