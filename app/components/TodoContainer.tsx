@@ -1,8 +1,10 @@
 import { TodoCard } from "./TodoCard";
 import mockData from "../mockData.json";
 
+// TODO: x button that calls delete todo
+// TODO: update button that moves to edit todo
+
 export const TodoContainer = () => {
-  console.log("mockData", mockData);
   return (
     <div className="">
       TodoContainer
