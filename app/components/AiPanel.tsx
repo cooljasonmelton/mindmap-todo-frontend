@@ -2,5 +2,7 @@
 // TODO: create a toggle to open and close the AI panel
 // TODO: save to cookie or localstorage option to keep this panel open or closed
 export const AiPanel = () => {
-  return <div className="flex-[1]">AiPanel Placeholder</div>;
+  return (
+    <div className="flex-[1] text-black bg-gray-600">AiPanel Placeholder</div>
+  );
 };
