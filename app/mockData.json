@@ -3,24 +3,24 @@
     "id": "000",
     "name": "Laundry",
     "description": "don't forget to check pants pockets",
-    "important": false
+    "isImportant": false
   },
   {
     "id": "001",
     "name": "emails",
     "description": "knock out 100",
-    "important": false
+    "isImportant": false
   },
   {
     "id": "002",
     "name": "throw out the old boxes",
     "description": "knock out 100",
-    "important": false
+    "isImportant": false
   },
   {
     "id": "003",
     "name": "pray",
     "description": "look out",
-    "important": true
+    "isImportant": true
   }
 ]

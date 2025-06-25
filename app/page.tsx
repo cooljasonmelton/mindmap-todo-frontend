@@ -10,12 +10,8 @@ const Home = () => {
       </header>
 
       <main className="flex">
-        <div className="flex-[1]">
-          <AiPanel />
-        </div>
-        <div className="flex-[3]">
-          <TodoContainer />
-        </div>
+        <AiPanel />
+        <TodoContainer />
       </main>
     </div>
   );

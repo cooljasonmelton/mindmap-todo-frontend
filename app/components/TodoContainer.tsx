@@ -6,10 +6,10 @@ import mockData from "../mockData.json";
 
 export const TodoContainer = () => {
   return (
-    <div className="">
+    <div className="flex-[3]">
       TodoContainer
-      {mockData.map((item, i) => (
-        <TodoCard key={`todo-${i}`} />
+      {mockData.map((todo, i) => (
+        <TodoCard key={`todo-${i}`} todo={todo} />
       ))}
     </div>
   );

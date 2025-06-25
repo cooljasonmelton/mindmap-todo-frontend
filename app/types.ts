@@ -2,7 +2,7 @@ export type ToDoItem = {
   id: string;
   name: string;
   description?: string;
-  important: boolean;
+  isImportant: boolean;
 };
 
 export type ToDoItems = ToDoItem[];
