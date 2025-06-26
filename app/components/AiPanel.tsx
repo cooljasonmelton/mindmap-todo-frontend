@@ -12,6 +12,7 @@ export const AiPanel = () => {
   const [showPanel, setShowPanel] = useState(true);
   console.log("showpanel", showPanel);
 
+  // TODO: maybe move this to it's own component?
   if (!showPanel) {
     return (
       <div className="text-black bg-gray-600">
