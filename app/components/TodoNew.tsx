@@ -118,7 +118,7 @@ export const TodoNew = (props: ToDoNewProps) => {
             placeholder="Enter description"
           />
         </div>
-        <div className="flex items-center">
+        <div className="flex items-center ml-2">
           <input
             id="isImportant"
             name="isImportant"

@@ -1,6 +1,6 @@
 COLORS:
 
-https://coolors.co/0c0f0a-fbff12-dde000-ff206e-e0004f-41ead4-ebebeb-ffffff
+https://coolors.co/0c0f0a-fbff12-dde000-ee8037-ff206e-e0004f-41ead4-ebebeb-ffffff
 
 TODO:
 
