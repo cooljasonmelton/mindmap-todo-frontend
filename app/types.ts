@@ -1,6 +1,6 @@
 export type ToDoItem = {
   id: string;
-  name: string;
+  title: string;
   description?: string;
   isImportant: boolean;
 };
