@@ -9,7 +9,7 @@ const Home = () => {
         <Navbar />
       </header>
 
-      <main className="flex lg:px-50">
+      <main className="flex lg:w-[960px] md:w-[720px] sm:w-[100%] m-auto">
         <TodoContainer />
         <AiPanel />
       </main>

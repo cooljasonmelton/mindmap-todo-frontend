@@ -6,8 +6,7 @@
 // TODO: cleanup and organize classnames
 
 import { useState } from "react";
-import { OpenButton } from "./OpenButton";
-import { CloseButton } from "./CloseButton";
+import { ShowPanelButton } from "./ShowPanelButton";
 
 export const AiPanel = () => {
   const [showPanel, setShowPanel] = useState(true);
@@ -17,14 +16,17 @@ export const AiPanel = () => {
   if (!showPanel) {
     return (
       <div className="text-black bg-gray-600">
-        <OpenButton onClick={() => setShowPanel(true)} />
+        <ShowPanelButton
+          isOpen={showPanel}
+          onClick={() => setShowPanel(true)}
+        />
       </div>
     );
   }
 
   return (
     <div className="flex-[1] flex items-start justify-start text-black bg-gray-600">
-      <CloseButton onClick={() => setShowPanel(false)} />
+      <ShowPanelButton isOpen={showPanel} onClick={() => setShowPanel(false)} />
     </div>
   );
 };
