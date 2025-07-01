@@ -9,9 +9,9 @@ const Home = () => {
         <Navbar />
       </header>
 
-      <main className="flex">
-        <AiPanel />
+      <main className="flex lg:px-50">
         <TodoContainer />
+        <AiPanel />
       </main>
     </div>
   );

@@ -1,4 +1,4 @@
-import { ChevronRight } from "lucide-react";
+import { ChevronLeft } from "lucide-react";
 
 export const OpenButton = ({
   color,
@@ -9,7 +9,7 @@ export const OpenButton = ({
 }) => {
   return (
     <button className="btn-primary-sm" onClick={onClick}>
-      <ChevronRight size={24} color={color} strokeWidth={2} />
+      <ChevronLeft size={24} color={color} strokeWidth={2} />
     </button>
   );
 };
