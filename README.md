@@ -6,9 +6,13 @@ TODO:
 
 todo app
 
-- Layout - dashboard with ai features panel and main todo items
-- TodoContainer
-- TodoCard
+#### LIST
+
+- &cross; Layout - dashboard with ai features panel and main todo items
+- &cross; TodoContainer
+- &cross; TodoCard
+- TodoCardNew
+- TodoCardUpdate
 - CRUD fetch, hook, react query
 - implement fetch hook
 
