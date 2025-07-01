@@ -9,8 +9,9 @@ interface ToDoNewProps {
 }
 interface FormErrorState {
   title?: string;
-  description?: string;
 }
+
+// TODO: set up isImportant logic (rn it isn't doing anything)
 
 export const TodoNew = (props: ToDoNewProps) => {
   const [formData, setFormData] = useState({
@@ -18,13 +19,12 @@ export const TodoNew = (props: ToDoNewProps) => {
     description: "",
     isImportant: false,
   });
-  const [errors, setErrors] = useState<FormErrorState>({
-    title: "",
-    description: "",
-  });
+  const [errors, setErrors] = useState<FormErrorState>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleChange = (e) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
@@ -32,7 +32,8 @@ export const TodoNew = (props: ToDoNewProps) => {
     }));
 
     // Clear error when user starts typing
-    if (errors[name]) {
+    // TODO: maken "if" more broad to clear any error and not just 'title'
+    if (name === "title") {
       setErrors((prev) => ({
         ...prev,
         [name]: "",
@@ -44,12 +45,12 @@ export const TodoNew = (props: ToDoNewProps) => {
     const newErrors: Partial<ToDoItem> = {};
 
     if (!formData.title.trim()) {
-      newErrors.title = "Title is required";
+      newErrors.title = "required";
     }
     return newErrors;
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
 
     const newErrors = validateForm();
@@ -77,85 +78,66 @@ export const TodoNew = (props: ToDoNewProps) => {
 
   return (
     <div className="card !bg-[var(--jmc-orange)] !text-[var(--jmc-black)] px-2 pt-2 pb-4 mx-[-1px] mb-[-1px]">
-      <div className="flex items-start justify-between">
-        {/* <h2 className="h3 p-0 mb-2">NEW TODO TITLE</h2> */}
-        <CloseButton onClick={props.cancelCreateTodo} />
-      </div>
-      {/* <p className="">NEW TODO DESCRIPTION</p> */}
-      <div
-      // className="max-w-md mx-auto bg-white p-8 rounded-lg shadow-lg"
-      >
-        <div
-        // className="space-y-6"
-        >
-          <div>
-            <label
-              htmlFor="name"
-              // className="block text-sm font-medium text-gray-700 mb-2"
-            >
-              Name
-            </label>
-            <input
-              type="text"
-              id="title"
-              name="title"
-              value={formData.title}
-              onChange={handleChange}
-              // className={`w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 ${
-              //   errors.title ? "border-red-500" : "border-gray-300"
-              // }`}
-              placeholder="Enter title"
-            />
-            {errors.title && (
-              <p
-              // className="mt-1 text-sm text-red-600"
-              >
-                {errors.title}
-              </p>
-            )}
-          </div>
-
-          <div>
-            <label
-              htmlFor="description"
-              // className="block text-sm font-medium text-gray-700 mb-2"
-            >
-              Description
-            </label>
-            <input
-              type="text"
-              id="description"
-              name="description"
-              value={formData.description}
-              onChange={handleChange}
-              // className={`w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 ${
-              //   errors.description ? "border-red-500" : "border-gray-300"
-              // }`}
-              placeholder="Enter description"
-            />
-            {errors.description && (
-              <p
-              // className="mt-1 text-sm text-red-600"
-              >
-                {errors.description}
-              </p>
-            )}
-          </div>
-
-          <button
-            type="submit"
-            disabled={isSubmitting}
-            onClick={handleSubmit}
-            className="btn-primary"
-            // className={`w-full py-2 px-4 rounded-md font-medium focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 ${
-            //   isSubmitting
-            //     ? "bg-gray-400 cursor-not-allowed"
-            //     : "bg-blue-600 hover:bg-blue-700 text-white"
-            // }`}
-          >
-            {isSubmitting ? "Adding..." : "Add"}
-          </button>
+      <div>
+        <div className="flex justify-end items-start">
+          <h2 className="h3 mr-auto ml-auto">Create Task</h2>
+          <CloseButton onClick={props.cancelCreateTodo} />
         </div>
+        <div>
+          <div className="flex gap-1">
+            <label htmlFor="title" className="form-label">
+              Title
+            </label>
+            <p className="form-label !text-[var(--error-700)]">
+              {errors?.title && errors.title}
+            </p>
+          </div>
+          <input
+            type="text"
+            id="title"
+            name="title"
+            value={formData.title}
+            onChange={handleChange}
+            className={`form-input border-2 ${
+              errors.title ? "border-red-500" : "border-gray-300"
+            }`}
+            placeholder="Enter title"
+          />
+        </div>
+
+        <div>
+          <label htmlFor="description" className="form-label">
+            Description
+          </label>
+          <textarea
+            id="description"
+            name="description"
+            value={formData.description}
+            onChange={handleChange}
+            className="form-input border-2 border-gray-300"
+            placeholder="Enter description"
+          />
+        </div>
+        <div className="flex items-center">
+          <input
+            id="isImportant"
+            name="isImportant"
+            type="checkbox"
+            className="h-4 w-4 mr-1 my-2 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+          />
+          <label htmlFor="isImportant" className="form-label">
+            Important
+          </label>
+        </div>
+
+        <button
+          type="submit"
+          disabled={isSubmitting}
+          onClick={handleSubmit}
+          className={`btn-primary ${isSubmitting ? "disabled" : ""}`}
+        >
+          {isSubmitting ? "Adding..." : "Add"}
+        </button>
       </div>
     </div>
   );
