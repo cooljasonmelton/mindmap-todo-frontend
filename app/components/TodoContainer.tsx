@@ -13,16 +13,22 @@ export const TodoContainer = () => {
   const [showTodoNew, setShowTodoNew] = useState(false);
   const [editableTodoId, setEditableTodoId] = useState<string | null>(null);
 
-  useEffect(() => {
-    // hide ToDoNew form if editing ToDo
-  }, [editableTodoId, showTodoNew, setShowTodoNew]);
+  const openTodoNewForm = () => {
+    setEditableTodoId(null);
+    setShowTodoNew(true);
+  };
+
+  const openTodoEditForm = (id: string | null) => {
+    setShowTodoNew(false);
+    setEditableTodoId(id);
+  };
 
   console.log("showTodoNew", showTodoNew, "editableTodoId", editableTodoId);
 
   return (
     <div className="card flex-[3]">
       <div className="flex">
-        <button className="btn-primary" onClick={() => setShowTodoNew(true)}>
+        <button className="btn-primary" onClick={openTodoNewForm}>
           <Plus />
         </button>
         <h1 className="h1 ml-auto mr-auto">Tasks</h1>
@@ -37,7 +43,7 @@ export const TodoContainer = () => {
           key={`todo-${i}`}
           todo={todo}
           editableTodoId={editableTodoId}
-          setEditableTodoId={setEditableTodoId}
+          openTodoEditForm={openTodoEditForm}
         />
       ))}
     </div>

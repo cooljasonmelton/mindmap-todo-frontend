@@ -12,7 +12,7 @@ import { TodoEdit } from "./TodoEdit";
 interface TodoItemProps {
   todo: ToDoItem;
   editableTodoId: string | null;
-  setEditableTodoId: Dispatch<SetStateAction<string | null>>;
+  openTodoEditForm: (id: string | null) => void;
 }
 
 export const TodoItem = (props: TodoItemProps) => {
@@ -23,7 +23,7 @@ export const TodoItem = (props: TodoItemProps) => {
       <TodoEdit
         title={title}
         description={description}
-        cancelCreateTodo={() => props.setEditableTodoId(null)}
+        cancelCreateTodo={() => props.openTodoEditForm(null)}
       />
     );
   }
@@ -32,7 +32,7 @@ export const TodoItem = (props: TodoItemProps) => {
       <div className="flex items-start justify-between">
         <h2 className="h3 p-0 mb-2">{title}</h2>
         <div className="flex gap-2">
-          <EditButton onClick={() => props.setEditableTodoId(id)} />
+          <EditButton onClick={() => props.openTodoEditForm(id)} />
           <CloseButton onClick={() => {}} />
         </div>
       </div>
