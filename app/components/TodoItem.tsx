@@ -1,22 +1,38 @@
 "use client";
 
-import { useState } from "react";
+import { Dispatch, SetStateAction, useState } from "react";
 import { ToDoItem } from "../types";
 import { CloseButton } from "./CloseButton";
 import { EditButton } from "./EditButton";
-import { TodoUpdate } from "./TodoUpdate";
+import { TodoEdit } from "./TodoEdit";
 
-export const TodoCard = (props: { todo: ToDoItem }) => {
+interface TodoItemProps {
+  todo: ToDoItem;
+  editableTodoId: string | null;
+  setEditableTodoId: Dispatch<SetStateAction<string | null>>;
+}
+
+export const TodoItem = (props: TodoItemProps) => {
   const [isEditing, setIsEditing] = useState(false);
   // console.log("props", props);
-  const { title, description } = props.todo;
+  const { id, title, description } = props.todo;
+
+  const makeTodoItemEditable = () => {
+    setIsEditing(true);
+    props.setEditableTodoId(id);
+  };
+
+  const closeTodoItemEditForm = () => {
+    setIsEditing(false);
+    props.setEditableTodoId(null);
+  };
 
   if (isEditing) {
     return (
-      <TodoUpdate
+      <TodoEdit
         title={title}
         description={description}
-        cancelCreateTodo={() => setIsEditing(false)}
+        cancelCreateTodo={closeTodoItemEditForm}
       />
     );
   }
@@ -25,7 +41,7 @@ export const TodoCard = (props: { todo: ToDoItem }) => {
       <div className="flex items-start justify-between">
         <h2 className="h3 p-0 mb-2">{title}</h2>
         <div className="flex gap-2">
-          <EditButton onClick={() => setIsEditing(true)} />
+          <EditButton onClick={makeTodoItemEditable} />
           <CloseButton onClick={() => {}} />
         </div>
       </div>

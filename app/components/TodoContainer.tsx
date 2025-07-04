@@ -1,8 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Plus } from "lucide-react";
-import { TodoCard } from "./TodoCard";
+import { TodoItem } from "./TodoItem";
 import mockData from "../mockData.json";
 import { TodoNew } from "./TodoNew";
 
@@ -11,7 +11,13 @@ import { TodoNew } from "./TodoNew";
 
 export const TodoContainer = () => {
   const [showTodoNew, setShowTodoNew] = useState(false);
-  console.log("showTodoNew", showTodoNew);
+  const [editableTodoId, setEditableTodoId] = useState<string | null>(null);
+
+  useEffect(() => {
+    // hide ToDoNew form if editing ToDo
+  }, [editableTodoId, showTodoNew, setShowTodoNew]);
+
+  console.log("showTodoNew", showTodoNew, "editableTodoId", editableTodoId);
 
   return (
     <div className="card flex-[3]">
@@ -27,7 +33,12 @@ export const TodoContainer = () => {
       )}
 
       {mockData.map((todo, i) => (
-        <TodoCard key={`todo-${i}`} todo={todo} />
+        <TodoItem
+          key={`todo-${i}`}
+          todo={todo}
+          editableTodoId={editableTodoId}
+          setEditableTodoId={setEditableTodoId}
+        />
       ))}
     </div>
   );

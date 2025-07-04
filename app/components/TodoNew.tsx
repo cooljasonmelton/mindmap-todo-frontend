@@ -8,6 +8,7 @@ interface ToDoNewProps {
 }
 
 // TODO: set up isImportant logic (rn it isn't doing anything)
+// TODO: connect to routing? /new
 
 export const TodoNew = (props: ToDoNewProps) => {
   return (

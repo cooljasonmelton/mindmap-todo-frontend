@@ -3,18 +3,20 @@
 import { CloseButton } from "./CloseButton";
 import { TodoForm } from "./TodoForm";
 
-interface ToDoUpdateProps {
+interface ToDoEditProps {
   id?: string;
   title?: string;
   description?: string;
   isImportant?: boolean;
   cancelCreateTodo: () => void;
+
 }
 
 // TODO: set up isImportant logic (rn it isn't doing anything)
 // TODO: close other open edits if editing a task (move logic for edit to parent TodoContainer)
+// TODO: connect to routing? /edit/[id]
 
-export const TodoUpdate = (props: ToDoUpdateProps) => {
+export const TodoEdit = (props: ToDoEditProps) => {
   return (
     <div className="card !bg-[var(--jmc-dark-blue)] !text-[var(--jmc-black)] px-2 pt-2 pb-4 mx-[-1px] mb-[-1px]">
       <div>
