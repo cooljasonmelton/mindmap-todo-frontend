@@ -13,17 +13,15 @@ export const TodoContainer = () => {
   const [showTodoNew, setShowTodoNew] = useState(false);
   const [editableTodoId, setEditableTodoId] = useState<string | null>(null);
 
+  // only show one create/new form at a time
   const openTodoNewForm = () => {
     setEditableTodoId(null);
     setShowTodoNew(true);
   };
-
   const openTodoEditForm = (id: string | null) => {
     setShowTodoNew(false);
     setEditableTodoId(id);
   };
-
-  console.log("showTodoNew", showTodoNew, "editableTodoId", editableTodoId);
 
   return (
     <div className="card flex-[3]">
