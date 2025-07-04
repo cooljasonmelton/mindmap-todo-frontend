@@ -10,9 +10,14 @@ todo app
 
 - &cross; Layout - dashboard with ai features panel and main todo items
 - &cross; TodoContainer
+- TodoContainer connect to GET api
 - &cross; TodoCard
-- TodoCardNew
-- TodoCardUpdate
+- TodoCard connect to DELETE api
+- &cross; TodoCardNew
+- TodoCardNew connect to POST api
+- &cross; TodoCardUpdate
+- TodoCardUpdate connect to PATCH api
+
 - CRUD fetch, hook, react query
 - implement fetch hook
 
