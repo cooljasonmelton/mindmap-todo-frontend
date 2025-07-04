@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Plus } from "lucide-react";
 import { TodoItem } from "./TodoItem";
 import mockData from "../mockData.json";

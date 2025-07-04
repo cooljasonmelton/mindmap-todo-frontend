@@ -1,4 +1,3 @@
-import { Dispatch, SetStateAction } from "react";
 import { ToDoItem } from "../types";
 import { CloseButton } from "./CloseButton";
 import { EditButton } from "./EditButton";
