@@ -1,10 +1,13 @@
-"use client";
-
-import { Dispatch, SetStateAction, useState } from "react";
+import { Dispatch, SetStateAction } from "react";
 import { ToDoItem } from "../types";
 import { CloseButton } from "./CloseButton";
 import { EditButton } from "./EditButton";
 import { TodoEdit } from "./TodoEdit";
+
+// TODO: add delete todo item and maybe some check like "are you sure?"" before delete
+// TODO: i'm thinking for "are you sure" delete, if you click the X, the X turns red and
+// you have to click it again to delete it? Maybe use a timer and reset it if not clicked
+// again after a couple seconds
 
 interface TodoItemProps {
   todo: ToDoItem;
@@ -13,26 +16,14 @@ interface TodoItemProps {
 }
 
 export const TodoItem = (props: TodoItemProps) => {
-  const [isEditing, setIsEditing] = useState(false);
-  // console.log("props", props);
   const { id, title, description } = props.todo;
 
-  const makeTodoItemEditable = () => {
-    setIsEditing(true);
-    props.setEditableTodoId(id);
-  };
-
-  const closeTodoItemEditForm = () => {
-    setIsEditing(false);
-    props.setEditableTodoId(null);
-  };
-
-  if (isEditing) {
+  if (props.editableTodoId === id) {
     return (
       <TodoEdit
         title={title}
         description={description}
-        cancelCreateTodo={closeTodoItemEditForm}
+        cancelCreateTodo={() => props.setEditableTodoId(null)}
       />
     );
   }
@@ -41,7 +32,7 @@ export const TodoItem = (props: TodoItemProps) => {
       <div className="flex items-start justify-between">
         <h2 className="h3 p-0 mb-2">{title}</h2>
         <div className="flex gap-2">
-          <EditButton onClick={makeTodoItemEditable} />
+          <EditButton onClick={() => props.setEditableTodoId(id)} />
           <CloseButton onClick={() => {}} />
         </div>
       </div>
