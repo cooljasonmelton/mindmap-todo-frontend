@@ -4,7 +4,7 @@ import { TodoContainer } from "./components/TodoContainer";
 
 const Home = () => {
   return (
-    <div>
+    <>
       <header>
         <Navbar />
       </header>
@@ -13,7 +13,7 @@ const Home = () => {
         <TodoContainer />
         <AiPanel />
       </main>
-    </div>
+    </>
   );
 };
 export default Home;

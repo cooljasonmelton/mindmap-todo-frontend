@@ -9,7 +9,6 @@ interface ToDoEditProps {
   description?: string;
   isImportant?: boolean;
   cancelCreateTodo: () => void;
-
 }
 
 // TODO: set up isImportant logic (rn it isn't doing anything)
@@ -19,18 +18,16 @@ interface ToDoEditProps {
 export const TodoEdit = (props: ToDoEditProps) => {
   return (
     <div className="card !bg-[var(--jmc-dark-blue)] !text-[var(--jmc-black)] px-2 pt-2 pb-4 mx-[-1px] mb-[-1px]">
-      <div>
-        <div className="flex justify-end items-start">
-          <h2 className="h3 mr-auto ml-auto">Edit Task</h2>
-          <CloseButton onClick={props.cancelCreateTodo} />
-        </div>
-        <TodoForm
-          id={props.id}
-          title={props.title}
-          description={props.description}
-          isImportant={props.isImportant}
-        />
+      <div className="flex justify-end items-start">
+        <h2 className="h3 mr-auto ml-auto">Edit Task</h2>
+        <CloseButton onClick={props.cancelCreateTodo} />
       </div>
+      <TodoForm
+        id={props.id}
+        title={props.title}
+        description={props.description}
+        isImportant={props.isImportant}
+      />
     </div>
   );
 };
