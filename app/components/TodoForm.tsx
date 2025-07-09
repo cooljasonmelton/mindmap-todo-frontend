@@ -8,11 +8,13 @@ interface TodoFormProps {
   title?: string;
   description?: string;
   isImportant?: boolean;
+  onSubmit?: () => void;
 }
 interface FormErrorState {
   title?: string;
 }
 
+// TODO: use onSubmit to close edit form after submit. should i reset edit form or just new form?
 // TODO: set up isImportant logic (rn it isn't doing anything)
 
 export const TodoForm = (props: TodoFormProps) => {
@@ -28,6 +30,17 @@ export const TodoForm = (props: TodoFormProps) => {
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target;
+
+    if (e.target instanceof HTMLInputElement && e.target.type === "checkbox") {
+      const isChecked = e.target.checked;
+      console.log("isChecked", isChecked);
+
+      return setFormData((prev) => ({
+        ...prev,
+        isImportant: isChecked,
+      }));
+    }
+
     setFormData((prev) => ({
       ...prev,
       [name]: value,
@@ -120,6 +133,7 @@ export const TodoForm = (props: TodoFormProps) => {
           name="isImportant"
           type="checkbox"
           className="h-4 w-4 mr-1 my-2 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+          onChange={handleChange}
         />
         <label htmlFor="isImportant" className="form-label">
           Important
