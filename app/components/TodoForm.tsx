@@ -83,7 +83,7 @@ export const TodoForm = (props: TodoFormProps) => {
       // Simulate API call
 
       if (props?.isNewTodo) {
-        createTodo.mutate(formData);
+        await createTodo.mutate(formData);
         setFormData({ title: "", description: "", isImportant: false });
       }
       // await new Promise((resolve) => setTimeout(resolve, 1000));
@@ -94,8 +94,10 @@ export const TodoForm = (props: TodoFormProps) => {
     } catch (error) {
       console.error("Submission error:", error);
     } finally {
-      props?.onSubmit?.();
       setIsSubmitting(false);
+
+      // TODO: fix so only calls on api success
+      props?.onSubmit?.();
     }
   };
 
