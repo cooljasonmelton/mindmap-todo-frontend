@@ -1,8 +1,13 @@
 "use client";
 
 import { useQuery } from "@tanstack/react-query";
+import { ToDoItem } from "../types";
 
-export const useTodos = () => {
+export const useTodos = (): {
+  todos: ToDoItem[];
+  isLoading: boolean;
+  error: Error | null;
+} => {
   const {
     data: todos,
     isLoading,

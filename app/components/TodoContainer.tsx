@@ -3,16 +3,17 @@
 import { useState } from "react";
 import { Plus } from "lucide-react";
 import { TodoItem } from "./TodoItem";
-import mockData from "../mockData.json";
 import { TodoNew } from "./TodoNew";
 import { useTodos } from "../data/useTodos";
 
 // TODO: on item, x button that calls delete todo
 // TODO: update button that moves to edit todo
+// TODO: handle error state
+// TODO: improve loading state
 
 export const TodoContainer = () => {
-  const todos = useTodos();
-  console.log("useTodos", todos);
+  const { todos, isLoading, error } = useTodos();
+  console.log("useTodos", todos, isLoading, error);
 
   const [showTodoNew, setShowTodoNew] = useState(false);
   const [editableTodoId, setEditableTodoId] = useState<string | null>(null);
@@ -40,14 +41,18 @@ export const TodoContainer = () => {
         <TodoNew cancelCreateTodo={() => setShowTodoNew(false)} />
       )}
 
-      {mockData.map((todo, i) => (
-        <TodoItem
-          key={`todo-${i}`}
-          todo={todo}
-          editableTodoId={editableTodoId}
-          openTodoEditForm={openTodoEditForm}
-        />
-      ))}
+      {isLoading ? (
+        <div className="w-full p-10 text-center">loading</div>
+      ) : (
+        todos.map((todo, i) => (
+          <TodoItem
+            key={`todo-${i}`}
+            todo={todo}
+            editableTodoId={editableTodoId}
+            openTodoEditForm={openTodoEditForm}
+          />
+        ))
+      )}
     </div>
   );
 };
