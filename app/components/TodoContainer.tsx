@@ -5,11 +5,15 @@ import { Plus } from "lucide-react";
 import { TodoItem } from "./TodoItem";
 import mockData from "../mockData.json";
 import { TodoNew } from "./TodoNew";
+import { useTodos } from "../data/useTodos";
 
 // TODO: on item, x button that calls delete todo
 // TODO: update button that moves to edit todo
 
 export const TodoContainer = () => {
+  const todos = useTodos();
+  console.log("useTodos", todos);
+
   const [showTodoNew, setShowTodoNew] = useState(false);
   const [editableTodoId, setEditableTodoId] = useState<string | null>(null);
 
