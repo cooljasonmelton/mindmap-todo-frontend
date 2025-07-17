@@ -1,11 +1,12 @@
 "use client";
 
 import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { NewToDoItemPayload } from "../types";
 
 export const useCreateTodo = () => {
   const queryClient = useQueryClient();
   const createTodo = useMutation({
-    mutationFn: (newTodo) =>
+    mutationFn: (newTodo: NewToDoItemPayload) =>
       fetch("http://localhost:8000/api/todos", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -17,7 +18,5 @@ export const useCreateTodo = () => {
     // TODO: onError: () =>
   });
 
-  return {
-    createTodo,
-  };
+  return createTodo;
 };

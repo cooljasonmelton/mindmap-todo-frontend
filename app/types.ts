@@ -5,4 +5,6 @@ export type ToDoItem = {
   isImportant: boolean;
 };
 
+export type NewToDoItemPayload = Omit<ToDoItem, "id">;
+
 export type ToDoItems = ToDoItem[];

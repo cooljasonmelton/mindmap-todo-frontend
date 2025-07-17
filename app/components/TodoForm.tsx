@@ -2,12 +2,14 @@
 
 import { useState } from "react";
 import { ToDoItem } from "../types";
+import { useCreateTodo } from "../data/useCreateTodo";
 
 interface TodoFormProps {
   id?: string;
   title?: string;
   description?: string;
   isImportant?: boolean;
+  isNewTodo?: boolean;
   onSubmit?: () => void;
 }
 interface FormErrorState {
@@ -18,6 +20,7 @@ interface FormErrorState {
 // TODO: set up isImportant logic (rn it isn't doing anything)
 
 export const TodoForm = (props: TodoFormProps) => {
+  const createTodo = useCreateTodo();
   const [formData, setFormData] = useState({
     title: props?.title || "",
     description: props?.description || "",
@@ -78,14 +81,20 @@ export const TodoForm = (props: TodoFormProps) => {
 
     try {
       // Simulate API call
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+
+      if (props?.isNewTodo) {
+        createTodo.mutate(formData);
+        setFormData({ title: "", description: "", isImportant: false });
+      }
+      // await new Promise((resolve) => setTimeout(resolve, 1000));
 
       // Reset form
-      setFormData({ title: "", description: "", isImportant: false });
-      alert("Form submitted successfully!");
+      // setFormData({ title: "", description: "", isImportant: false });
+      // alert("Form submitted successfully!");
     } catch (error) {
       console.error("Submission error:", error);
     } finally {
+      props?.onSubmit?.();
       setIsSubmitting(false);
     }
   };

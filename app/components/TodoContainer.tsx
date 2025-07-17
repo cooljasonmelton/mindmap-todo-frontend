@@ -9,7 +9,7 @@ import { useTodos } from "../data/useTodos";
 // TODO: on item, x button that calls delete todo
 // TODO: update button that moves to edit todo
 // TODO: handle error state
-// TODO: improve loading state
+// TODO: improve loading o
 
 export const TodoContainer = () => {
   const { todos, isLoading, error } = useTodos();

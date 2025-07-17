@@ -17,7 +17,7 @@ export const TodoNew = (props: ToDoNewProps) => {
         <h2 className="h3 mr-auto ml-auto">Create Task</h2>
         <CloseButton onClick={props.cancelCreateTodo} />
       </div>
-      <TodoForm />
+      <TodoForm isNewTodo={true} onSubmit={props.cancelCreateTodo} />
     </div>
   );
 };
