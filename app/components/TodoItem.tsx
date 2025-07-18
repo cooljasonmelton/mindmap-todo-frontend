@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react";
+import { useDeleteTodo } from "../data/useDeleteTodo";
 import { ToDoItem } from "../types";
 import { CloseButton } from "./CloseButton";
 import { EditButton } from "./EditButton";
@@ -15,7 +17,20 @@ interface TodoItemProps {
 }
 
 export const TodoItem = (props: TodoItemProps) => {
+  const deleteTodo = useDeleteTodo();
+  const [isReadyToDelete, setIsReadyToDelete] = useState(false);
   const { id, title, description } = props.todo;
+
+  useEffect(() => {}, [isReadyToDelete]);
+
+  const handleClickCloseButton = () => {
+    if (isReadyToDelete) {
+      deleteTodo(id);
+      setIsReadyToDelete(false);
+    } else {
+      setIsReadyToDelete(true);
+    }
+  };
 
   if (props.editableTodoId === id) {
     return (
@@ -32,7 +47,11 @@ export const TodoItem = (props: TodoItemProps) => {
         <h2 className="h3 p-0 mb-2">{title}</h2>
         <div className="flex gap-2">
           <EditButton onClick={() => props.openTodoEditForm(id)} />
-          <CloseButton onClick={() => {}} />
+          <CloseButton
+            isReadyToDelete={isReadyToDelete}
+            onBlur={() => setIsReadyToDelete(false)}
+            onClick={handleClickCloseButton}
+          />
         </div>
       </div>
       <p className="">{description}</p>

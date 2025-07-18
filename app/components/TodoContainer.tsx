@@ -9,11 +9,10 @@ import { useTodos } from "../data/useTodos";
 // TODO: on item, x button that calls delete todo
 // TODO: update button that moves to edit todo
 // TODO: handle error state
-// TODO: improve loading o
+// TODO: improve loading state
 
 export const TodoContainer = () => {
-  const { todos, isLoading, error } = useTodos();
-  console.log("useTodos", todos, isLoading, error);
+  const { todos, isLoading } = useTodos();
 
   const [showTodoNew, setShowTodoNew] = useState(false);
   const [editableTodoId, setEditableTodoId] = useState<string | null>(null);
