@@ -35,9 +35,10 @@ export const TodoItem = (props: TodoItemProps) => {
   if (props.editableTodoId === id) {
     return (
       <TodoEdit
+        id={id}
         title={title}
         description={description}
-        cancelCreateTodo={() => props.openTodoEditForm(null)}
+        closeEditForm={() => props.openTodoEditForm(null)}
       />
     );
   }

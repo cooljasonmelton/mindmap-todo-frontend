@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { ToDoItem } from "../types";
 import { useCreateTodo } from "../data/useCreateTodo";
+import { useEditTodo } from "../data/useEditTodo";
 
 interface TodoFormProps {
   id?: string;
@@ -21,6 +22,7 @@ interface FormErrorState {
 
 export const TodoForm = (props: TodoFormProps) => {
   const createTodo = useCreateTodo();
+  const editTodo = useEditTodo();
   const [formData, setFormData] = useState({
     title: props?.title || "",
     description: props?.description || "",
@@ -80,18 +82,17 @@ export const TodoForm = (props: TodoFormProps) => {
     setIsSubmitting(true);
 
     try {
-      // Simulate API call
-
       if (props?.isNewTodo) {
         await createTodo.mutate(formData);
-        setFormData({ title: "", description: "", isImportant: false });
+        return setFormData({ title: "", description: "", isImportant: false });
       }
-      // await new Promise((resolve) => setTimeout(resolve, 1000));
-
-      // Reset form
-      // setFormData({ title: "", description: "", isImportant: false });
-      // alert("Form submitted successfully!");
+      if (props?.id) {
+        // TODO: don't call if form data doesn't change
+        console.log("hit edit todo mutate", props?.id);
+        return await editTodo.mutate({ ...formData, id: props.id });
+      }
     } catch (error) {
+      // TODO: error handling
       console.error("Submission error:", error);
     } finally {
       setIsSubmitting(false);
