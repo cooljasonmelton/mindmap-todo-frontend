@@ -10,16 +10,16 @@ todo app
 
 - &cross; Layout - dashboard with ai features panel and main todo items
 - &cross; TodoContainer
-- TodoContainer connect to GET api
+- &cross; TodoContainer connect to GET api
 - &cross; TodoCard
-- TodoCard connect to DELETE api
+- &cross; TodoCard connect to DELETE api
 - &cross; TodoCardNew
-- TodoCardNew connect to POST api
+- &cross; TodoCardNew connect to POST api
 - &cross; TodoCardUpdate
-- TodoCardUpdate connect to PATCH api
-
-- CRUD fetch, hook, react query
-- implement fetch hook
+- &cross; TodoCardUpdate connect to PATCH api
+- &cross; CRUD fetch, hook, react query
+- &cross; implement fetch hook
+- research using AI api - https://ollama.com
 
 ai features panel
 
