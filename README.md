@@ -1,25 +1,63 @@
+# mindmap ai-supported todo app
+
+- A Next.js, React todo app with AI assistance helping users breakdown and decide on their next task!
+
+TODO: add gif and/or demo like this:
+
+<!-- <img src="https://github.com/cooljasonmelton/paperclips-front-end/blob/master/Animated%20GIF-downsized_large%20(2).gif" width=""/>
+<a href="https://www.youtube.com/watch?v=vqtw3m22R2k&t=4s"> Demo </a> -->
+
+## Application Features
+
+TODO: finish features list
+
+- Create, Read, Update, Destroy todo tasks
+- AI generated task breakdowns into simple steps
+
+## Built With​
+
+front end:
+
+- TypeScript
+- React
+- Next.js
+- Tailwind
+- React Query
+
+api:
+
+- Node.js
+- Ollama
+- ​
+
+## Installation Instructions
+
+TODO: finish install instructions
+
+1. Clone repo for frontend and api:
+
+```bash
+git clone https://github.com/cooljasonmelton/mindmap-todo-frontend
+git clone https://github.com/cooljasonmelton/mindmap-todo-api
+```
+
+2.
+
+### Author
+
+<a href='https://github.com/cooljasonmelton'> Jason Melton</a>
+
+<hr/>
+
+# Notes:
+
 COLORS:
 
 https://coolors.co/0c0f0a-fbff12-dde000-ee8037-ff206e-e0004f-41ead4-ebebeb-ffffff
 
-TODO:
+#### MAKE LIST
 
-todo app
-
-#### LIST
-
-- &cross; Layout - dashboard with ai features panel and main todo items
-- &cross; TodoContainer
-- &cross; TodoContainer connect to GET api
-- &cross; TodoCard
-- &cross; TodoCard connect to DELETE api
-- &cross; TodoCardNew
-- &cross; TodoCardNew connect to POST api
-- &cross; TodoCardUpdate
-- &cross; TodoCardUpdate connect to PATCH api
-- &cross; CRUD fetch, hook, react query
-- &cross; implement fetch hook
-- research using AI api - https://ollama.com
+- loader
 
 ai features panel
 
