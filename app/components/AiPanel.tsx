@@ -57,48 +57,52 @@ export const AiPanel = ({
 
   if (!showPanel) {
     return (
-      <div className="flex w-full">
-        <ShowPanelButton
-          isOpen={showPanel}
-          onClick={() => setShowPanel(true)}
-        />
+      <div className="card flex-[0] flex flex-col w-full min-h-[90vh]">
+        <div className="flex w-full h-[52px]">
+          <ShowPanelButton
+            isOpen={showPanel}
+            onClick={() => setShowPanel(true)}
+          />
+        </div>
       </div>
     );
   }
 
   return (
     <div className="card flex-[2] flex flex-col">
-      <div className="flex w-full">
+      <div className="flex">
         <ShowPanelButton
           isOpen={showPanel}
           onClick={() => setShowPanel(false)}
         />
         <h3 className="h1 ml-auto mr-auto">a.i.</h3>
       </div>
-      <AiFeatureContainer
-        buttonText="brainstorm task"
-        selectedTodo={selectedTodo}
-        handleClick={handleClickBrainstorm}
-      />
-      <AiFeatureContainer
-        buttonText="offer step by step"
-        selectedTodo={selectedTodo}
-        handleClick={handleClickBreakdown}
-      />
-      {isLoading && (
-        <div className="pt-8 pb-6">
-          <Loader />
-        </div>
-      )}
-      {!!steps && !isLoading && (
-        <ul className="p-2">
-          {steps?.map((step, i) => (
-            <li className="list-item" key={i}>
-              {step}
-            </li>
-          ))}
-        </ul>
-      )}
+      <div className="card">
+        <AiFeatureContainer
+          buttonText="brainstorm task"
+          selectedTodo={selectedTodo}
+          handleClick={handleClickBrainstorm}
+        />
+        <AiFeatureContainer
+          buttonText="offer step by step"
+          selectedTodo={selectedTodo}
+          handleClick={handleClickBreakdown}
+        />
+        {isLoading && (
+          <div className="pt-8 pb-6">
+            <Loader />
+          </div>
+        )}
+        {!!steps && !isLoading && (
+          <ul className="p-2">
+            {steps?.map((step, i) => (
+              <li className="list-item" key={i}>
+                {step}
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
     </div>
   );
 };
