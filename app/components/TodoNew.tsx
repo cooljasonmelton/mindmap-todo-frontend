@@ -7,6 +7,7 @@ interface ToDoNewProps {
   cancelCreateTodo: () => void;
 }
 
+// TODO: fix bug where todo doesn't always update on submit
 // TODO: set up isImportant logic (rn it isn't doing anything)
 // TODO: connect to routing? /new
 

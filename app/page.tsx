@@ -10,7 +10,6 @@ const Home = () => {
       </header>
       <main className="flex lg:w-[960px] md:w-[720px] sm:w-[100%] m-auto">
         <DashboardContent />
-  
       </main>
     </>
   );

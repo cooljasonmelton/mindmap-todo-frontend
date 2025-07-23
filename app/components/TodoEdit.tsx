@@ -11,6 +11,7 @@ interface ToDoEditProps {
   closeEditForm: () => void;
 }
 
+// TODO: fix bug where edit doesnt always show up after confirm
 // TODO: set up isImportant logic (rn it isn't doing anything)
 // TODO: close other open edits if editing a task (move logic for edit to parent TodoContainer)
 // TODO: connect to routing? /edit/[id]

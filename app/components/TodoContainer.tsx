@@ -44,7 +44,7 @@ export const TodoContainer = ({
   };
 
   return (
-    <div className="card flex-[3]">
+    <div className="card flex-[3] min-h-[90vh]">
       <div className="flex">
         <button className="btn-primary" onClick={openTodoNewForm}>
           <Plus />
