@@ -77,7 +77,7 @@ export const AiPanel = ({
         />
         <h3 className="h1 ml-auto mr-auto">a.i.</h3>
       </div>
-      <div className="card">
+      <div className="card pb-2">
         <AiFeatureContainer
           buttonText="brainstorm task"
           selectedTodo={selectedTodo}

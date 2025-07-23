@@ -15,7 +15,7 @@ const AiFeatureContainer = ({
   const task = `${selectedTodo?.title} ${selectedTodo?.description}`;
 
   return (
-    <div className={`p-2`}>
+    <div className={`mt-2 px-2`}>
       <button
         disabled={!selectedTodo}
         className={`w-full btn-primary ${!selectedTodo ? "disabled" : ""}`}
