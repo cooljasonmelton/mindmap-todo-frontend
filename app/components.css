@@ -30,6 +30,14 @@
   box-shadow: var(--shadow-sm);
 }
 
+.card-selected {
+  background-color: var(--accent-900);
+  color: var(--card-foreground);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+}
+
 .btn-primary {
   background-color: var(--primary-800);
   color: white;
@@ -41,7 +49,7 @@
   transition: all 0.2s ease;
 }
 
-.btn-primary.disabled {
+.btn-primary-disabled {
   background-color: var(--gray-400);
   color: white;
   padding: var(--space-2) var(--space-4);

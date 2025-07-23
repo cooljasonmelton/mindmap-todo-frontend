@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { getTaskBreakdown } from "./aiUtils";
 
-// TODO: add logic to store or cache ai responses and match them tasks to reduce ollama api calls
+// TODO: add logic to store or cache ai responses and match them to tasks, reduce ollama api calls
 export const useAIBreakDownTask = () => {
   const [steps, setSteps] = useState("");
   const [isLoading, setIsLoading] = useState(false);

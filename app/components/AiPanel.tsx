@@ -9,19 +9,21 @@
 // TODO: cleanup and organize classnames
 
 import { useState } from "react";
+import AiBreakDownTaskContainer from "./AIBreakDownTaskContainer";
 import { ShowPanelButton } from "./ShowPanelButton";
 import { useAIBreakDownTask } from "../ai/useAIBreakDownTask";
+import { ToDoItem } from "../types";
 
-export const AiPanel = () => {
+export const AiPanel = ({
+  selectedTodo,
+}: {
+  selectedTodo: ToDoItem | null;
+}) => {
   const [showPanel, setShowPanel] = useState(false);
 
-  const { isLoading, handleAIBreakdown, steps } = useAIBreakDownTask();
+  const { isLoading, steps } = useAIBreakDownTask();
   console.log("isLoading", isLoading, "steps", steps);
 
-  const handleClick = () => {
-    console.log("click ai button");
-    handleAIBreakdown("do laundry"); // TODO: hardcoded, replace with task once loaded
-  };
 
   // TODO: maybe move show/hide to it's own component or logic to hook
   if (!showPanel) {
@@ -44,9 +46,7 @@ export const AiPanel = () => {
         />
         <h3 className="h3 ml-auto mr-auto">Apply AI</h3>
       </div>
-      <button className="btn-primary btn-primary:hover" onClick={handleClick}>
-        breakdown task
-      </button>
+      <AiBreakDownTaskContainer selectedTodo={selectedTodo} />
     </div>
   );
 };

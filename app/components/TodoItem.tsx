@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useDeleteTodo } from "../data/useDeleteTodo";
 import { ToDoItem } from "../types";
 import { CloseButton } from "./CloseButton";
@@ -14,6 +14,7 @@ interface TodoItemProps {
   todo: ToDoItem;
   editableTodoId: string | null;
   openTodoEditForm: (id: string | null) => void;
+  isSelected: boolean;
 }
 
 export const TodoItem = (props: TodoItemProps) => {
@@ -21,7 +22,7 @@ export const TodoItem = (props: TodoItemProps) => {
   const [isReadyToDelete, setIsReadyToDelete] = useState(false);
   const { id, title, description } = props.todo;
 
-  useEffect(() => {}, [isReadyToDelete]);
+  const isSelectedStyles = props.isSelected ? "card-selected" : "card";
 
   const handleClickCloseButton = () => {
     if (isReadyToDelete) {
@@ -43,7 +44,7 @@ export const TodoItem = (props: TodoItemProps) => {
     );
   }
   return (
-    <div className="card px-2 pt-2 pb-4 mx-[-1px] mb-[-1px]">
+    <div className={`${isSelectedStyles} px-2 pt-2 pb-4 mx-[-1px] mb-[-1px]`}>
       <div className="flex items-start justify-between">
         <h2 className="h3 p-0 mb-2">{title}</h2>
         <div className="flex gap-2">
