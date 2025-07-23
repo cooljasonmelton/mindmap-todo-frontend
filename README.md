@@ -6,6 +6,9 @@ TODO: add gif and/or demo like this:
 
 <!-- <img src="https://github.com/cooljasonmelton/paperclips-front-end/blob/master/Animated%20GIF-downsized_large%20(2).gif" width=""/>
 <a href="https://www.youtube.com/watch?v=vqtw3m22R2k&t=4s"> Demo </a> -->
+<img width="500" height="250" alt="Screenshot 2025-07-23 at 12 36 03 PM" src="https://github.com/user-attachments/assets/aae6b7ec-c5ff-4d4f-a602-ac3f277fc2f3" />
+<img width="500" height="250" alt="Screenshot 2025-07-23 at 12 35 26 PM" src="https://github.com/user-attachments/assets/07e97690-e3d0-4247-aedd-484b3d14f32d" />
+<img width="500" height="250" alt="Screenshot 2025-07-23 at 12 34 33 PM" src="https://github.com/user-attachments/assets/b01c8297-7a42-4279-9b7f-bc0443d80943" />
 
 ## Application Features
 
