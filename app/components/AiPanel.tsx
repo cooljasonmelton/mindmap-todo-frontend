@@ -53,7 +53,8 @@ export const AiPanel = ({
   const isLoading = isLoadingBreakdown || isLoadingBrainstorm;
   const steps =
     (isBreakdownSteps && breakdownSteps) ||
-    (isBrainstormSteps && brainstormSteps);
+    (isBrainstormSteps && brainstormSteps) ||
+    [];
 
   if (!showPanel) {
     return (
@@ -68,6 +69,7 @@ export const AiPanel = ({
     );
   }
 
+  console.log("steps", steps);
   return (
     <div className="card flex-[2] flex flex-col">
       <div className="flex">
@@ -77,7 +79,7 @@ export const AiPanel = ({
         />
         <h3 className="h1 ml-auto mr-auto">a.i.</h3>
       </div>
-      <div className="card pb-2">
+      <div className={!!steps.length ? "card" : "card pb-2"}>
         <AiFeatureContainer
           buttonText="brainstorm task"
           selectedTodo={selectedTodo}
@@ -93,7 +95,7 @@ export const AiPanel = ({
             <Loader />
           </div>
         )}
-        {!!steps && !isLoading && (
+        {!!steps.length && !isLoading && (
           <ul className="p-2">
             {steps?.map((step, i) => (
               <li className="list-item" key={i}>
