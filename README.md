@@ -7,7 +7,10 @@ TODO: add gif and/or demo like this:
 <!-- <img src="https://github.com/cooljasonmelton/paperclips-front-end/blob/master/Animated%20GIF-downsized_large%20(2).gif" width=""/>
 <a href="https://www.youtube.com/watch?v=vqtw3m22R2k&t=4s"> Demo </a> -->
 
+### Brainstorm a task:
 <img width="1000" height="728" alt="Screenshot 2025-07-27 at 8 47 15 PM" src="https://github.com/user-attachments/assets/b923cc14-7998-4358-a0cc-d51d9309beb9" />
+
+### Break task into steps:
 <img width="1000" height="728" alt="Screenshot 2025-07-27 at 8 46 54 PM" src="https://github.com/user-attachments/assets/96a797a6-2bf3-4f92-98ab-4b6d3551bae7" />
 
 ## Application Features
