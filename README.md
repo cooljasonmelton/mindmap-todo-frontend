@@ -19,8 +19,6 @@ A Next.js, React todo app with AI assistance helping users breakdown and decide 
 
 ## Application Features
 
-TODO: finish features list
-
 - Create, Read, Update, Destroy todo tasks
 - Select task and get breakdown into steps
 - Select task and get brainstorming questions about task
