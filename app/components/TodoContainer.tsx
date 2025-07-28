@@ -4,7 +4,6 @@ import { Dispatch, SetStateAction, useState } from "react";
 import { Plus } from "lucide-react";
 import { TodoItem } from "./TodoItem";
 import { TodoNew } from "./TodoNew";
-import { useTodos } from "../data/useTodos";
 import { ToDoItem } from "../types";
 
 // TODO: on item, x button that calls delete todo
@@ -15,12 +14,14 @@ import { ToDoItem } from "../types";
 export const TodoContainer = ({
   selectedTodo,
   setSelectedTodo,
+  todos,
+  isLoading,
 }: {
-  selectedTodo: ToDoItem | null;
-  setSelectedTodo: Dispatch<SetStateAction<ToDoItem | null>>;
+  todos: ToDoItem[];
+  isLoading: boolean;
+  selectedTodo: ToDoItem | undefined;
+  setSelectedTodo: Dispatch<SetStateAction<ToDoItem | undefined>>;
 }) => {
-  const { todos, isLoading } = useTodos();
-
   const [showTodoNew, setShowTodoNew] = useState(false);
   const [editableTodoId, setEditableTodoId] = useState<string | null>(null);
 
@@ -37,7 +38,7 @@ export const TodoContainer = ({
   const handleClickTodo = (todo: ToDoItem) => {
     // deselect if selected
     if (todo.id === selectedTodo?.id) {
-      setSelectedTodo(null);
+      setSelectedTodo(undefined);
     } else {
       setSelectedTodo(todo);
     }

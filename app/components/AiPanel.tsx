@@ -1,8 +1,8 @@
 "use client";
 
 // ******* NEXT *******
-// TODO: move breakdown task to own component / file
-// TODO: when Ai panel is open, user can click on tasks, highlight them and then apply the Ai option to that task
+// TODO: move steps display to its own componenet and share with AiCustomQuestion.ts
+// TODO: fix disabled button styles
 
 // ******* BACKBURNER *******
 // TODO: save to cookie or localstorage option to keep this panel open or closed
@@ -16,11 +16,12 @@ import Loader from "./Loader";
 import AiFeatureContainer from "./AiFeatureContainer";
 import { useAiBreakDownTask } from "../ai/useAiBreakDownTask";
 import { useAiBrainstormTask } from "../ai/useAiBrainstormTask";
+import AiCustomQuestionForm from "./AiCustomQuestionForm";
 
 export const AiPanel = ({
   selectedTodo,
 }: {
-  selectedTodo: ToDoItem | null;
+  selectedTodo: ToDoItem | undefined;
 }) => {
   const [showPanel, setShowPanel] = useState(true);
   const {
@@ -79,6 +80,7 @@ export const AiPanel = ({
         <h3 className="h1 ml-auto mr-auto">a.i.</h3>
       </div>
       <div className={!!steps.length ? "card" : "card pb-2"}>
+        <AiCustomQuestionForm />
         <AiFeatureContainer
           buttonText="brainstorm task"
           selectedTodo={selectedTodo}

@@ -13,3 +13,11 @@ export const getTaskBreakdownPrompt = (
 Task: ${task}
 
 Format: "output | output | output | ..."`;
+
+export const getCustomQuestionResponsePrompt = (
+  question: string
+) => `Please answer the following question separating your response with ' | ' and no other text, no other separators or numbered steps:
+
+Question: ${question}
+
+Format: "output | output | output | ..."`;

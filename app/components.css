@@ -38,6 +38,14 @@
   box-shadow: var(--shadow-sm);
 }
 
+.card-custom-question {
+  background-color: var(--jmc-black);
+  color: var(--jmc-white);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+}
+
 .btn-primary {
   background-color: var(--primary-800);
   color: white;

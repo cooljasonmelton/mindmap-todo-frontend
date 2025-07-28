@@ -9,7 +9,7 @@ const AiFeatureContainer = ({
   handleClick,
 }: {
   buttonText: string;
-  selectedTodo: ToDoItem | null;
+  selectedTodo: ToDoItem | undefined;
   handleClick: (task: string) => void;
 }) => {
   const task = `${selectedTodo?.title} ${selectedTodo?.description}`;
