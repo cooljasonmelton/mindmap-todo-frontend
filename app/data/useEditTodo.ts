@@ -24,7 +24,6 @@ export const useEditTodo = () => {
   const editTodo = useMutation({
     mutationFn: editItem,
     onSuccess: () => {
-      console.log("hit success");
       queryClient.invalidateQueries({ queryKey: ["todos"] });
     },
     // TODO: onError: () =>

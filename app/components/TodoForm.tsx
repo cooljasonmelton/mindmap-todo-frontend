@@ -38,7 +38,6 @@ export const TodoForm = (props: TodoFormProps) => {
 
     if (e.target instanceof HTMLInputElement && e.target.type === "checkbox") {
       const isChecked = e.target.checked;
-      console.log("isChecked", isChecked);
 
       return setFormData((prev) => ({
         ...prev,
@@ -88,7 +87,6 @@ export const TodoForm = (props: TodoFormProps) => {
       }
       if (props?.id) {
         // TODO: don't call if form data doesn't change
-        console.log("hit edit todo mutate", props?.id);
         return await editTodo.mutate({ ...formData, id: props.id });
       }
     } catch (error) {

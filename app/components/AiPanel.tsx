@@ -69,7 +69,6 @@ export const AiPanel = ({
     );
   }
 
-  console.log("steps", steps);
   return (
     <div className="card flex-[2] flex flex-col">
       <div className="flex">
