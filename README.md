@@ -2,31 +2,18 @@
 
 A Next.js, React todo app with AI assistance helping users breakdown and decide on their next task!
 
-<!-- TODO: add gif -->
-<img width="728" height="auto" alt="Screenshot 2025-07-27 at 9 47 25 PM" src="https://github.com/user-attachments/assets/40990488-1359-4e70-9d6a-7e371d376526" />
+<img width="100%" height="auto" alt="Screenshot 2025-07-27 at 9 47 25 PM" src="https://github.com/user-attachments/assets/40990488-1359-4e70-9d6a-7e371d376526" />
 
-### Break task into steps:
-
-<img width="728" height="auto" alt="Screenshot 2025-07-27 at 9 47 05 PM" src="https://github.com/user-attachments/assets/a4cb5772-fc58-47bd-ac6c-2894647e243c" />
-
-### Brainstorm a task:
-
-<img width="728" height="auto" alt="Screenshot 2025-07-27 at 9 46 43 PM" src="https://github.com/user-attachments/assets/e8a50cc4-8a06-41e1-ac23-6e3921697aba" />
-
-### Ask custom question:
-
-<img width="728" height="auto" alt="Screenshot 2025-07-27 at 9 46 27 PM" src="https://github.com/user-attachments/assets/798c3911-27b1-47b9-9208-5a72b368d3fc" />
-
-## Application Features
+## Key Features
 
 - Create, Read, Update, Destroy todo tasks
-- Select task and get breakdown into steps
-- Select task and get brainstorming questions about task
-- Ask LLM a custom question
+- Select task and have AI break it into steps
+- Select task and get AI generated brainstorming questions about task
+- Ask AI a custom question
 
 ## Built With​
 
-front end:
+### front end:
 
 - TypeScript
 - React
@@ -34,43 +21,71 @@ front end:
 - Tailwind
 - React Query
 
-api:
+### apis:
 
-- Node.js
-- Ollama (local)
+- Node.js, Express, SQLite Database
+- Ollama LLM (run locally local)
 
-## Installation Instructions
+## LOCAL SET UP
 
-TODO: finish install instructions
+1. Clone repos for frontend and api:
 
-1. Clone repo for frontend and api:
-
-```bash
+```
 git clone https://github.com/cooljasonmelton/mindmap-todo-frontend
 git clone https://github.com/cooljasonmelton/mindmap-todo-api
 ```
 
-2.
+2. Install LLM [Ollama](https://ollama.com/) and run locally
 
-### Author
+```
+brew install ollama
+ollama serve
+```
 
+3. Set up backend api and database per the mindmap-todo-api [local set up instructions](https://github.com/cooljasonmelton/mindmap-todo-api?tab=readme-ov-file#local-set-up)
+
+4. start the frontend:
+
+```
+npm run dev
+```
+
+## Use Cases:
+
+### Break task into steps:
+
+<img width="100%" height="auto" alt="Screenshot 2025-07-27 at 9 47 05 PM" src="https://github.com/user-attachments/assets/a4cb5772-fc58-47bd-ac6c-2894647e243c" />
+
+### Brainstorm a task:
+
+<img width="100%" height="auto" alt="Screenshot 2025-07-27 at 9 46 43 PM" src="https://github.com/user-attachments/assets/e8a50cc4-8a06-41e1-ac23-6e3921697aba" />
+
+### Ask custom question:
+
+<img width="100%" height="auto" alt="Screenshot 2025-07-27 at 9 46 27 PM" src="https://github.com/user-attachments/assets/798c3911-27b1-47b9-9208-5a72b368d3fc" />
+
+<hr/>
+
+Created by
 <a href='https://github.com/cooljasonmelton'> Jason Melton</a>
 
 <hr/>
+<br/>
+<br/>
+<br/>
+<br/>
 
-<hr/>
-
-# Notes:
+# DEV Notes:
 
 COLORS:
 
 https://coolors.co/0c0f0a-fbff12-dde000-ee8037-ff206e-e0004f-41ead4-ebebeb-ffffff
 
-#### MAKE LIST
+#### TODO LIST
 
 - loader
 
-ai features panel
+ai possible features brainstorm:
 
 - random todo (non-ai)
 - summarize todo list themes
@@ -79,7 +94,11 @@ ai features panel
   - toggle suggest important item
 - break down todo into steps
 
-ideal
+perfect world features:
 
 - like freeform app on mac, can drag screen and look at different items and click to interact or order them with drag and drop
 - trash can for tasks where you can go through and bring back tasks or permenantly delete them
+
+```
+
+```
