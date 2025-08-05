@@ -64,6 +64,10 @@ npm run dev
 
 <img width="100%" height="auto" alt="Screenshot 2025-07-27 at 9 46 27 PM" src="https://github.com/user-attachments/assets/798c3911-27b1-47b9-9208-5a72b368d3fc" />
 
+### DEMO
+https://github.com/user-attachments/assets/68c9f38e-9518-431b-a73e-9dc8bb3b7292
+
+
 <hr/>
 
 Created by
