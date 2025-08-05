@@ -1,6 +1,6 @@
 # mindmap ai-supported todo app
 
-A Next.js, React todo app with AI assistance helping users breakdown and decide on their next task!
+A Next.js, React todo app with AI assistance helping users break down and decide on their next task!
 
 <img width="100%" height="auto" alt="Screenshot 2025-07-27 at 9 47 25 PM" src="https://github.com/user-attachments/assets/40990488-1359-4e70-9d6a-7e371d376526" />
 
